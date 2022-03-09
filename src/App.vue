@@ -6,15 +6,6 @@
     <button @click="increment">Count: {{ count }}</button>
     <button @click="nowRelevance">Now Relevance</button>
     <p>{{ relevance }}</p>
-    <p>Demo chart:</p>
-    <div id="chart-01">
-    <apexchart
-      width="500"
-      type="bar"
-      :options="chartOptions"
-      :series="series"
-    ></apexchart>
-  </div>
   </div>
 </template>
 
@@ -27,27 +18,6 @@ export default {
     const count = ref(0);
     const relevance = ref("");
 
-    const chartOptions = {
-
-      chart: {
-        id: "basic-bar"
-      },
-      xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-      },
-      yaxis: {
-        title: {
-          text: "Y-Axis"
-        }
-      }
-    };
-
-    const series = [
-      {
-        name: "series-1",
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
-      }
-    ];
 
     const increment = () => {
       count.value++;
@@ -66,8 +36,6 @@ export default {
     return {
       count,
       relevance,
-      chartOptions,
-      series,
       increment,
       nowRelevance,
     };
