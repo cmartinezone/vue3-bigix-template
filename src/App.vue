@@ -6,6 +6,10 @@
     <button @click="increment">Count: {{ count }}</button>
     <button @click="nowRelevance">Now Relevance</button>
     <p>{{ relevance }}</p>
+    <div id="#chart-01">
+      <p>Chart demo</p>
+      <apexchart width="380" type="donut" :options="options" :series="series"></apexchart>
+    </div>
   </div>
 </template>
 
@@ -33,11 +37,19 @@ export default {
       }
     };
 
+    const msg = "Hello Vue!";
+
+    const options = {}
+    const  series = [44, 55, 41, 17, 15]
+
     return {
       count,
       relevance,
+      msg,
       increment,
       nowRelevance,
+      options,
+      series
     };
   },
 };
@@ -68,7 +80,7 @@ a {
   color: #42b983;
 }
 
-#chart-01 {
+.vue-apexcharts {
  margin: auto;
   width: 50%;
 
